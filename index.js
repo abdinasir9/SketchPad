@@ -1,3 +1,5 @@
+let click = true;
+
 function populateBoard(size){
     let board = document.querySelector('.board');
     let squares = board.querySelectorAll('div');
@@ -6,6 +8,7 @@ board.style.gridTemplateColumns = `repeat(${size},1fr)`;
 board.style.gridTemplateRows = `repeat(${size},1fr)`;
 
 let amount = size * size ;
+if(click){
 for (let i = 0; i < amount; i++){
     let square = document.createElement('div');
     square.addEventListener('mouseover', () => {
@@ -29,7 +32,7 @@ for (let i = 0; i < amount; i++){
     board.append(square)
     console.log("appended")
 }
-}
+}};
 
 function getNewColor(){
     let symbols = '0123456789ABCDEF';
@@ -49,4 +52,13 @@ function changeSize(input){
     populateBoard(input)
     
 }
+
+// Changes your click variable from true to false, is listening to the element with board class
+let mouseClick = document.querySelector("body");
+mouseClick.addEventListener("click", () => {
+  click = !click;
+  console.log(`i was clicked`, click);
+});
+//End of function above 
+
 populateBoard(16)

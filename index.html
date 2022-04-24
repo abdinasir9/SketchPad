@@ -16,8 +16,10 @@
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
-                <button class="random" >Random Color</button>
-                <button class="reset">Reset</button>
+                <button class="reset" value="black" onclick="colorSquare(this.value)">Black</button>
+                <button class="reset" value="red" onclick="colorSquare(this.value)" >Red</button>
+                <button class="reset" value="white"onclick="colorSquare(this.value)">Erase</button>
+                <button class="reset" onclick="clearBoard">Reset</button>
             </div>
             <div class="input">
             <input type="number" max="100" min="0" placeholder="Size of Board" value="16" onchange="changeSize(this.value)">
@@ -25,7 +27,8 @@
         </div>
     </div>
     </div>
-    <script src="index.js"></script>
+    <script src="index1.js"></script>
+  
 </body>
 
 </html>
