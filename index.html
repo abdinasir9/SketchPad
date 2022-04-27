@@ -12,14 +12,14 @@
 
 <body>
     <div class="flex-container">
-        <div class="title"><h1>SketchPad</h1></div>
+        <h1>SketchPad</h1>
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
                 <button class="reset" value="black" onclick="colorSquare(this.value)">Black</button>
                 <button class="reset" value="red" onclick="colorSquare(this.value)" >Red</button>
                 <button class="reset" value="white"onclick="colorSquare(this.value)">Erase</button>
-                <button class="reset" onclick="clearBoard">Reset</button>
+                <button class="reset" >Reset</button>
             </div>
             <div class="input">
             <input type="number" max="100" min="0" placeholder="Size of Board" value="16" onchange="changeSize(this.value)">

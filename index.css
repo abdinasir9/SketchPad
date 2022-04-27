@@ -1,14 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100vh;
+}
 body{
-    background-color: wheat;
+    background-color: #001f3f;
+    height: 100%;
+    color: white;
 }
 .flex-container{
     display: flex;
     flex-direction: column;
-    
+    margin: 0.7em;
+  
 }
-.title {
+h1 {
     display: flex;
     justify-content: center;
+    padding: 1.2em;
+    font-size: 1.3rem;
 }
 
 .content{
@@ -17,8 +28,8 @@ body{
     align-content: center;
 }
 .board {
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 600px;
     background-color: white;
     display: grid;
     border: 1px green solid;

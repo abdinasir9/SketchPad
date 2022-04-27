@@ -42,7 +42,7 @@ function getNewColor(){
     }
     return color
 }
-
+c
 
 function changeSize(input){
     if(input > 100){

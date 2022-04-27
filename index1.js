@@ -57,12 +57,13 @@ function colorSquare(choice) {
   });
 }
 
-function getNewColor() {
+function getNewColor(color) {
   let symbols = "0123456789ABCDEF";
-  let color = "#";
+  let randomColor = "#";
   for (let i = 0; i < 6; i++) {
-    color = color + symbols[Math.floor(Math.random() * 16)];
+    color = randomColor + symbols[Math.floor(Math.random() * 16)];
   }
+  console.log('random color selected')
   return color;
 }
 
@@ -76,9 +77,12 @@ mouseClick.addEventListener("mousedown", () => {
 
 
 
-clearBoard = () =>{
-  square.style.backgroundColor = "white"
-    console.log('I was reset')
-}
 
-populateBoard(16);
+  let square = document.createElement("div");
+  let reset = document.querySelector('.reset')
+  reset.addEventListener('click', () =>{
+    square.style.backgroundColor = "white"
+    console.log('I was reset righ?')
+  });
+  
+  populateBoard(16);
