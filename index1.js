@@ -1,8 +1,8 @@
-let colorOptions = ["black", "red", "white","reset"];
+let colorOptions = ["black", "red", "white"];
 let click = true;
 let color = "black";
 let noColor = undefined;
-
+let reset = document.querySelector(".clear");
 //this function takes an an argument for the size and creates a board with the NxN
 function populateBoard(size) {
   const board = document.querySelector(".board");
@@ -13,28 +13,25 @@ function populateBoard(size) {
   let amount = size * size;
   for (let i = 0; i < amount; i++) {
     let square = document.createElement("div");
-    if(color == 'reset'){
-      squares.style.backgroundColor = 'white'
-    }
-    else{
     square.addEventListener("mouseover", () => {
       if (click) {
-        board.style.cursor = 'crosshair'
+        board.style.cursor = "crosshair";
         square.style.backgroundColor = color;
         console.log(`You chose ${color}`);
       } else {
         square.style.backgroundColor = noColor;
         console.log(`You chose ${color}`);
-        board.style.cursor = 'default'
+        board.style.cursor = "default";
       }
     });
 
     board.append(square);
     console.log("appended");
-
-  }}
+  }
 }
-
+reset.addEventListener("click", () => {
+  populateBoard(25)
+});
 //End of function
 
 // this function allows us to change the size of our board by
@@ -44,7 +41,7 @@ function changeSize(input) {
     alert(`number has to be less than 100`);
     return;
   }
-  populateBoard(input);
+  populateBoard(25);
 }
 //End of function
 
@@ -55,12 +52,11 @@ function colorSquare(choice) {
   colorOptions.forEach((option) => {
     if (option == choice) {
       color = option;
-      console.log("we got a color");
+      console.log("we got a color", color);
       return color;
     }
   });
 }
-
 
 // function resetBoard(){
 //   const board = document.querySelector(".board");
@@ -76,13 +72,9 @@ mouseClick.addEventListener("mousedown", () => {
 });
 //End of function above
 
-if(click = false){
-  style.cursor = 'auto'
-  console.log('cursor change')
+if ((click = false)) {
+  style.cursor = "auto";
+  console.log("cursor change");
 }
 
-
-  
-
-  
-  populateBoard(25);
+populateBoard(25);

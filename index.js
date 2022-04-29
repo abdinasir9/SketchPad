@@ -20,13 +20,13 @@ for (let i = 0; i < amount; i++){
         square.style.backgroundColor = "white"
         console.log('this should be black')
     });
-    let randomColor = document.querySelector('.random');
-    randomColor.addEventListener('click', () => {
-        square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = getNewColor()
-            console.log('this should be random')
-        });
-    })
+    // let randomColor = document.querySelector('.random');
+    // randomColor.addEventListener('click', () => {
+    //     square.addEventListener('mouseover', () => {
+    //         square.style.backgroundColor = getNewColor()
+    //         console.log('this should be random')
+    //     });
+    // })
 
 
     board.append(square)
@@ -42,7 +42,7 @@ function getNewColor(){
     }
     return color
 }
-c
+
 
 function changeSize(input){
     if(input > 100){
@@ -61,4 +61,4 @@ mouseClick.addEventListener("click", () => {
 });
 //End of function above 
 
-populateBoard(50)
+populateBoard(50);

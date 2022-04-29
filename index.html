@@ -16,10 +16,10 @@
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
-                <button class="reset" value="black" onclick="colorSquare(this.value)">Black</button>
-                <button class="reset" value="red" onclick="colorSquare(this.value)" >Red</button>
-                <button class="reset" value="white"onclick="colorSquare(this.value)">Erase</button>
-                <button class="reset" onclick="colorSquare(this.value)" >Reset</button>
+                <button class="color" value="black" onclick="colorSquare(this.value)">Black</button>
+                <button class="color" value="red" onclick="colorSquare(this.value)" >Red</button>
+                <button class="color" value="white"onclick="colorSquare(this.value)">Erase</button>
+                <button class="clear" value="reset" >Reset</button>
             </div>
             <div class="input">
             <input type="number" max="100" min="0" placeholder="Size of Board" value="50" onchange="changeSize(this.value)">
