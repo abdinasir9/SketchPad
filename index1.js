@@ -1,4 +1,4 @@
-let colorOptions = ["black", "red", "white", "reset", "random"];
+let colorOptions = ["black", "red", "white","reset"];
 let click = true;
 let color = "black";
 let noColor = undefined;
@@ -10,25 +10,29 @@ function populateBoard(size) {
   squares.forEach((div) => div.remove());
   board.style.gridTemplateColumns = `repeat(${size},1fr)`;
   board.style.gridTemplateRows = `repeat(${size},1fr)`;
-
   let amount = size * size;
   for (let i = 0; i < amount; i++) {
     let square = document.createElement("div");
-
+    if(color == 'reset'){
+      squares.style.backgroundColor = 'white'
+    }
+    else{
     square.addEventListener("mouseover", () => {
       if (click) {
+        board.style.cursor = 'crosshair'
         square.style.backgroundColor = color;
         console.log(`You chose ${color}`);
       } else {
         square.style.backgroundColor = noColor;
         console.log(`You chose ${color}`);
+        board.style.cursor = 'default'
       }
     });
 
     board.append(square);
     console.log("appended");
 
-  }
+  }}
 }
 
 //End of function
@@ -57,16 +61,13 @@ function colorSquare(choice) {
   });
 }
 
-function getNewColor(color) {
-  let symbols = "0123456789ABCDEF";
-  let randomColor = "#";
-  for (let i = 0; i < 6; i++) {
-    color = randomColor + symbols[Math.floor(Math.random() * 16)];
-  }
-  console.log('random color selected')
-  return color;
-}
 
+// function resetBoard(){
+//   const board = document.querySelector(".board");
+//   let squares = board.querySelectorAll("div");
+//   squares.style.backgroundColor = color;
+//     console.log('board reset')
+// }
 // Changes your click variable from true to false, is listening to the element with board class
 let mouseClick = document.querySelector(".board");
 mouseClick.addEventListener("mousedown", () => {
@@ -75,14 +76,13 @@ mouseClick.addEventListener("mousedown", () => {
 });
 //End of function above
 
+if(click = false){
+  style.cursor = 'auto'
+  console.log('cursor change')
+}
 
 
-
-  let square = document.createElement("div");
-  let reset = document.querySelector('.reset')
-  reset.addEventListener('click', () =>{
-    square.style.backgroundColor = "white"
-    console.log('I was reset righ?')
-  });
   
-  populateBoard(16);
+
+  
+  populateBoard(25);

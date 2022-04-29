@@ -61,4 +61,4 @@ mouseClick.addEventListener("click", () => {
 });
 //End of function above 
 
-populateBoard(16)
+populateBoard(50)

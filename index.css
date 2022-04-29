@@ -8,6 +8,7 @@ body{
     background-color: #001f3f;
     height: 100%;
     color: white;
+    cursor: default;
 }
 .flex-container{
     display: flex;
